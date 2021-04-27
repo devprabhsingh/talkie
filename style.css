@@ -320,7 +320,6 @@ footer div input[type="submit"]{
         width:60%;
     }
 
-    
     .fa-bars{
         display:block !important;
         cursor:pointer;
@@ -391,10 +390,20 @@ footer div input[type="submit"]{
     }
     #review{
         margin-top: 110vh;
-        height:180vh;
+        height:170vh;
     }
 
+    .card{
+        width:80% !important;
+        margin: auto;
+    }
     footer #query{
         display: none;
-}
+    }
+    footer div h2{
+        font-size: 16px;
+    }
+    footer div p{
+        font-size: 14px;
+    }
 }
