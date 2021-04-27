@@ -1,0 +1,381 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+header{
+    min-height: 10vh;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#logo{
+    cursor:pointer;
+    font-size:35px;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    width:35%;
+}
+.fa-shopping-cart{
+    cursor:pointer;
+    font-size: 25px;
+}
+.fa-bars{
+    display:none;
+}
+sup{
+    background:gold;
+    padding:2px;
+    margin-left:2px;
+}
+nav a{
+    font-size: 1.1em;
+    border:2px solid white;
+    border-width:0 0 3px 0;
+    transition: border 0.4s;
+}
+nav a:hover{
+    border-color:black;
+}
+#latest-phone{
+    display: block;
+    animation:showImg 1.4s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#latest{
+    height:90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+#latest p{
+    font-size: 35px;
+}
+p>button{
+    outline:none;
+    border:none;
+    background:black;
+    color:white;
+    padding:10px;
+    cursor:pointer;
+    border:2px solid black;
+}
+p>button:hover{
+    border-color:white;
+}
+
+#camera{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#camera>img{
+    display: block;
+    object-fit:cover;
+}
+#camera p{
+    position: relative;
+    font-size:30px;
+}
+#up,#down{
+    opacity: 0;
+}
+.upanimate{
+    animation:uptext 0.5s ease-in-out 0.5s 1 forwards;
+}
+.downanimate{
+    animation:downtext 0.5s ease-in-out 0.5s 1 forwards;
+}
+#line{
+    margin:5px 0;
+    height:10px;
+    width:0%;
+    background-color: black;
+}
+.lineanimate{
+    animation:line 0.5s ease 1 forwards;
+}
+#img-gallery{
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+}
+#img-gallery>h1{
+    font-size:30px;
+    animation:textAppear 3s ease-in-out 1;
+}
+#grid img{
+    height:350px;
+    width:450px;
+    object-fit:cover;
+}
+#grid{
+    height:100vh;
+    display:grid;
+    grid-template-columns:auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transform: scale(0,0);
+}
+.gridanimate{
+    animation:rotateShowGallery 0.7s ease-in-out forwards;
+}
+
+#specs{
+    z-index:2;
+    background:white;
+    margin-top:10vh;
+    position:sticky;
+    top:0;
+    height:100vh;
+}
+#specs img{
+    display: block;
+    height:70vh;
+    width:60%;
+    margin:auto;
+}
+.spec-row{
+    height:10vh;
+    font-size:25px;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.spec-row p{
+    opacity:0;
+}
+
+#review{
+    margin-top:80vh;
+    height:120vh;
+}
+#review h1{
+    text-align: center;
+    font-size: 30px;;
+}
+#card-box .card{
+    background:rgb(236, 232, 232);
+    border-radius:15px;
+    width:60%;
+    margin:auto;
+    margin-top:3vh;
+    padding:40px;
+}
+#review button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:14px 10px;
+    display:block;
+    width:170px;
+    margin:auto;
+    background:rgb(224, 224, 224);
+    margin-top:3vh;
+    font-size:17px;
+}
+footer{
+    padding:20px;
+    background:grey;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer div h2{
+    margin:5px 0;
+}
+footer div p {
+    padding:5px;
+    color:white;
+}
+footer div p:hover{
+    color:gold;
+}
+footer div input[type="text"]{
+    padding:2px;
+    margin:5px;
+
+}
+footer div input[type="submit"]{
+    display:block;
+    width:100px;
+    padding:5px;
+    margin:auto;
+}
+
+@keyframes showImg{
+    from{
+        transform:translateX(700px) scale(0.6,0.6);
+    }
+    to{
+        transform: translateX(0px) scale(0.8,0.8);
+    }
+}
+
+@keyframes rotateShowGallery{
+    from{
+        transform: scale(0,0) rotateZ(360deg);
+    }
+    to{
+        transform: scale(1,1) rotateZ(0deg);
+    }
+}
+
+@keyframes textAppear{
+    from{
+        opacity:0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes line{
+    from{
+        width:0%;
+    }
+    to{
+        width:87%;
+    }
+}
+
+@keyframes uptext{
+    0%{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    50%{
+        opacity: 0;
+        transform:translateY(36px);
+    }
+    75%{
+        opacity: 0;
+      transform:translateY(18px);
+    }
+    100%{
+        opacity: 1;
+      transform:translateY(0);
+    }
+}
+
+@keyframes downtext{
+    0%{
+        opacity:0;
+        transform: translateY(-100px);
+    }
+    25%{
+        opacity:0;
+        transfrom:translateY(-65px);
+    }
+    50%{
+        opacity:0;
+        transfrom:translateY(-30px);
+    }
+    100%{
+        opacity:1;
+        transfrom:translateY(0);
+    }
+}
+
+@media only screen and (max-width:500px){
+    body{
+        position:relative;
+    }
+    header>nav{
+        opacity:0;
+        position:absolute;
+        height:30vh;
+        width:80%;
+        top:10vh;
+        bottom:40vh;
+        background:white;
+        z-index:2;
+        display:flex !important;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    header>nav>a{
+        display:block;
+        width:60%;
+    }
+
+    
+    .fa-bars{
+        display:block;
+        cursor:pointer;
+        font-size: 30px;
+    }
+    header>p{
+        flex:0.7;
+    }
+
+    #latest{
+        flex-direction: column;
+    }
+    #latest-phone{
+        height:50vh;
+        width:70%;
+    }
+    #camera{
+        flex-direction: column;
+    }
+    #camera>img{
+        height:50vh;
+        width:90%;
+    }
+    #camera>div{
+        margin-top:10vh;
+        width:80% !important;
+    }
+    #line{
+        width:100% !important;
+    }
+
+    #img-gallery{
+        flex-direction: column;
+        margin-top: 10vh;
+
+    }
+    #grid{
+        height:60vh;
+    }
+    #grid img{
+        height:200px;
+        width:200px;
+    }
+    .spec-row p{
+        font-size: 17px;
+    }
+    #specs img{
+        height:60vh;
+        width:100%;
+    }
+    #row2{
+        margin-top:10vh;
+    }
+    #review{
+        margin-top: 90vh;
+        height:120vh;
+    }
+
+    footer #query{
+        display: none;
+}
+}
