@@ -13,7 +13,7 @@ const blank = document.getElementById("blank");
 window.addEventListener("scroll",()=>{
 
      var textPos = up.getBoundingClientRect().top;
-     if(textPos<750){
+     if(textPos<600){
          up.classList.add("upanimate");
          down.classList.add("downanimate");
          line.classList.add("lineanimate");
